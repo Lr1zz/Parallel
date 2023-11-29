@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+    body {
+        font-family: 'Arial', sans-serif;
+        font-style:oblique;
+        color: white;
+        background-color:pink; 
+        background-size: cover;
+        background-position: center;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        height: 100vh;
+        justify-content: center; 
+    }
+    
+    .container {
+        text-align: center;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px purple;
+    }
+    
+    button {
+        padding: 10px 20px;
+        font-size: 16px;
+        font-style:oblique;
+        cursor: pointer;
+        background-color:lavender;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        margin-top: 20px;
+    }
+    
+    button:hover {
+        background-color: rgb(210, 53, 79);
+    }
+    </style>
+    <title>Group Website</title>
+</head>
+
+
+<body>
+    <div class="container">
+        <h1>Welcome to Check the Group Members!</h1>
+        <p id="names"></p>
+        <button onclick="generateName()">Our name</button>
+    </div>
+    <script>
+    const names = [
+        "6488168 Linfeng Zhang",
+        "6488087 Thanatchaya Sujarit ",
+        "6388171 Qiyue Shi",
+    ];
+    
+    let nameIndex=0;
+    
+    function generateName() {
+        const nameElement = document.getElementById('names');
+        nameElement.textContent =nameIndex+1+', '+names[nameIndex];
+        nameIndex = (nameIndex + 1)%names.length;
+    }
+    </script>
+</body>
+</html>
